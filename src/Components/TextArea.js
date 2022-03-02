@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
 export default function TextArea(props) {
-  const [text, setText] = useState("Enter text here...");
+  const [text, setText] = useState("");
 
   const handleUpClick = () => {
     console.log("Button Clicked..");
@@ -43,8 +43,8 @@ export default function TextArea(props) {
         <p>
           {text.split(" ").length} words, {text.length} characters
         </p>
-        <h2>Preview</h2>
-        <p>{text}</p>
+        {/* <h2>Preview</h2>
+        <p>{text}</p> */}
       </div>
     </>
   );
