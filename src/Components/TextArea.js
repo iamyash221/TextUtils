@@ -23,12 +23,18 @@ export default function TextArea(props) {
   return (
     <>
       <div className="mb-3 container">
-        <h1>{props.heading}</h1>
+        <h1 style={{ color: props.mode === "dark" ? "white" : "#121212" }}>
+          {props.heading}
+        </h1>
         <textarea
           className="form-control"
           id="exampleFormControlTextarea1"
           rows="8"
           value={text}
+          style={{
+            backgroundColor: props.mode === "dark" ? "#121212" : "white",
+            color: props.mode === "dark" ? "white" : "#121212",
+          }}
           onChange={handleOnChange}
         ></textarea>
         <button className="btn btn-primary mt-3 " onClick={handleUpClick}>
@@ -39,8 +45,10 @@ export default function TextArea(props) {
         </button>
       </div>
       <div className="container my-3">
-        <h1>Your text summary</h1>
-        <p>
+        <h2 style={{ color: props.mode === "dark" ? "white" : "#121212" }}>
+          Your text summary
+        </h2>
+        <p style={{ color: props.mode === "dark" ? "white" : "#121212" }}>
           {text.split(" ").length} words, {text.length} characters
         </p>
         {/* <h2>Preview</h2>

@@ -1,37 +1,39 @@
-import React, { useState } from "react";
+import React from "react";
 
-export default function DarkMode() {
-  const [myStyle, setmyStyle] = useState({
-    backgroundColor: "white",
-    color: "black",
-  });
+export default function DarkMode(props) {
+  //   const [myStyle, setmyStyle] = useState({
+  //     backgroundColor: "white",
+  //     color: "black",
+  //   });
 
-  const [btnText, setbtnText] = useState("Enable Dark Mode");
+  //   const [btnText, setbtnText] = useState("Enable Dark Mode");
 
-  const toggleMode = () => {
-    if (myStyle.backgroundColor === "white") {
-      setmyStyle({
-        backgroundColor: "black",
-        color: "white",
-      });
-      setbtnText("Disable Dark Mode");
-    } else {
-      setmyStyle({
-        backgroundColor: "white",
-        color: "black",
-      });
-      setbtnText("Enable Dark Mode");
-    }
-  };
+  //   const toggleMode = () => {
+  //     if (myStyle.backgroundColor === "white") {
+  //       setmyStyle({
+  //         backgroundColor: "black",
+  //         color: "white",
+  //       });
+  //       setbtnText("Disable Dark Mode");
+  //     } else {
+  //       setmyStyle({
+  //         backgroundColor: "white",
+  //         color: "black",
+  //       });
+  //       setbtnText("Enable Dark Mode");
+  //     }
+  //   };
 
   return (
     <>
       <div
         className="accordion container"
         id="accordionExample"
-        style={myStyle}
+        style={{ backgroundColor: props.mode === "dark" ? "#121212" : "white" }}
       >
-        <h1>About Us</h1>
+        <h1 style={{ color: props.mode === "dark" ? "white" : "#121212" }}>
+          About Us
+        </h1>
         <div className="accordion-item">
           <h2 className="accordion-header" id="headingOne">
             <button
@@ -41,7 +43,10 @@ export default function DarkMode() {
               data-bs-target="#collapseOne"
               aria-expanded="true"
               aria-controls="collapseOne"
-              style={myStyle}
+              style={{
+                backgroundColor: props.mode === "dark" ? "#121212" : "white",
+                color: props.mode === "dark" ? "white" : "#121212",
+              }}
             >
               Accordion Item #1
             </button>
@@ -52,7 +57,13 @@ export default function DarkMode() {
             aria-labelledby="headingOne"
             data-bs-parent="#accordionExample"
           >
-            <div className="accordion-body" style={myStyle}>
+            <div
+              className="accordion-body"
+              style={{
+                backgroundColor: props.mode === "dark" ? "#121212" : "white",
+                color: props.mode === "dark" ? "white" : "#121212",
+              }}
+            >
               <strong>This is the first item's accordion body.</strong> It is
               shown by default, until the collapse plugin adds the appropriate
               classes that we use to style each element. These classes control
@@ -73,7 +84,10 @@ export default function DarkMode() {
               data-bs-target="#collapseTwo"
               aria-expanded="false"
               aria-controls="collapseTwo"
-              style={myStyle}
+              style={{
+                backgroundColor: props.mode === "dark" ? "#121212" : "white",
+                color: props.mode === "dark" ? "white" : "#121212",
+              }}
             >
               Accordion Item #2
             </button>
@@ -84,7 +98,13 @@ export default function DarkMode() {
             aria-labelledby="headingTwo"
             data-bs-parent="#accordionExample"
           >
-            <div className="accordion-body" style={myStyle}>
+            <div
+              className="accordion-body"
+              style={{
+                backgroundColor: props.mode === "dark" ? "#121212" : "white",
+                color: props.mode === "dark" ? "white" : "#121212",
+              }}
+            >
               <strong>This is the second item's accordion body.</strong> It is
               hidden by default, until the collapse plugin adds the appropriate
               classes that we use to style each element. These classes control
@@ -105,7 +125,10 @@ export default function DarkMode() {
               data-bs-target="#collapseThree"
               aria-expanded="false"
               aria-controls="collapseThree"
-              style={myStyle}
+              style={{
+                backgroundColor: props.mode === "dark" ? "#121212" : "white",
+                color: props.mode === "dark" ? "white" : "#121212",
+              }}
             >
               Accordion Item #3
             </button>
@@ -116,7 +139,13 @@ export default function DarkMode() {
             aria-labelledby="headingThree"
             data-bs-parent="#accordionExample"
           >
-            <div className="accordion-body" style={myStyle}>
+            <div
+              className="accordion-body"
+              style={{
+                backgroundColor: props.mode === "dark" ? "#121212" : "white",
+                color: props.mode === "dark" ? "white" : "#121212",
+              }}
+            >
               <strong>This is the third item's accordion body.</strong> It is
               hidden by default, until the collapse plugin adds the appropriate
               classes that we use to style each element. These classes control
@@ -128,9 +157,9 @@ export default function DarkMode() {
             </div>
           </div>
         </div>
-        <button className="btn btn-primary my-3" onClick={toggleMode}>
+        {/* <button className="btn btn-primary my-3" onClick={toggleMode}>
           {btnText}
-        </button>
+        </button> */}
       </div>
     </>
   );
