@@ -6,6 +6,7 @@ export default function TextArea(props) {
   const handleUpClick = () => {
     console.log("Button Clicked..");
     let newText = text.toUpperCase();
+
     setText(newText);
   };
 
@@ -49,7 +50,12 @@ export default function TextArea(props) {
           Your text summary
         </h2>
         <p style={{ color: props.mode === "dark" ? "white" : "#121212" }}>
-          {text.split(" ").length} words, {text.length} characters
+          {
+            text.split(/\s/).filter((element) => {
+              return element.length !== 0;
+            }).length
+          }{" "}
+          words, {text.length} characters
         </p>
         {/* <h2>Preview</h2>
         <p>{text}</p> */}
